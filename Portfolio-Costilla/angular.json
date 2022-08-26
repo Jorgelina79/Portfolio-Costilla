@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Porfolio-Costilla": {
+    "Portfolio-Costilla": {
       "projectType": "application",
       "schematics": {},
       "root": "",
