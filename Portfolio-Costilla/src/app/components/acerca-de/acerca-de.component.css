@@ -2,29 +2,29 @@
     padding: 30px;
 }
 div{
-    background-color: #e8eefb;
+    background-color: #FCF3CF ;
     text-align: center;
 }
 /*Estilo de la foto de perfil*/
 
-@media (min-width: 576px){
+@media (min-width: 575px){
     #fotodeperfil{
         position: absolute;
-        width: 15%;
+        width: 14%;
         border-radius: 100%;
         box-shadow: 3px 3px 3px grey;
         left: 3%;
-        top: 615px;
+        top: 990px;
     }
 }
-@media (max-width: 575px){
+@media (max-width: 576px){
     #fotodeperfil{
         position: absolute;
-        width: 30%;
+        width: 27%;
         border-radius: 100%;
         box-shadow: 3px 3px 3px grey;
-        left:30%;
-        top: 650px;
+        left:35%;
+        top: 770px;
     }
 }
 
