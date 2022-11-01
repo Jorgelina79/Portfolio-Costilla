@@ -4,6 +4,7 @@
  */
 package com.portfolio.jsc.Security.jwt;
 
+import com.portfolio.jsc.Security.Service.UserDetailsImp;
 import java.io.IOException;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -23,12 +24,12 @@ import org.springframework.web.filter.OncePerRequestFilter;
  */
 public class JwtTokenFilter extends OncePerRequestFilter {
 
-    private final static Logger logger  =  LoggerFactory.getLogger(JwtProvider.class);
+    private final static Logger logger = LoggerFactory.getLogger(JwtProvider.class);
 
     @Autowired
     JwtProvider jwtProvider;
     @Autowired
-    UserDetailsImpl userDetailsServiceImpl;
+    UserDetailsImp userDetailsServiceImpl;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
@@ -49,8 +50,9 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 
     private String getToken(HttpServletRequest request) {
         String header = request.getHeader("Authorization");
-        if(header != null && header.startsWith("Bearer")) {
-            return null;
+        if (header != null && header.startsWith("Bearer")) {
+            return header.replace("Bearer", "");
         }
+        return null;
     }
 }
